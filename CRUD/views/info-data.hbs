@@ -1,0 +1,29 @@
+{{> header}}
+{{> navbar}}
+    <div class="container">
+    <div class="px-5 mt-5">
+     <div class="group-btn-rentcar">
+        <a href="/edit-data/{{heroes.id}}"><i data-feather="edit"></i></a>
+        <a href="/delete-heroes/{{heroes.id}}" class="btn-delete"><i data-feather="trash"></i></a>
+    </div>
+    </div>
+    <div class="container">
+      <div class="row mt-5 mb-5">
+        <div class="col-6">
+          <img src="{{heroes.photo}}" class="img-fluid" alt="imgnotfound" />
+        </div>
+        <div class="col-6 infocars">
+          <div class="text-title-content mb-2">
+            {{heroes.name}}
+          </div>
+          <div class="text-details-content mb-3">
+              <button type="button" class="btn btn-outline-success">type : {{heroes.type_id}}</button> 
+          </div>
+          <div>
+              <p>Meliodas adalah ketua dari prajurit Tujuh Dosa Besar yang paling ditakuti. Meskipun sosoknya hanya berupa bocah yang nampak menyenangkan dan terlihat tidak mudah marah, Meliodas merupa
+                  kan representasi dari dosa besar berupa amarah yang disebut dengan Dosa Naga Amarah.</p>
+          </div>
+        </div>
+      </div>
+</div>
+{{> footer}}

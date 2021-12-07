@@ -1,0 +1,48 @@
+{{> header}}
+{{> navbar}}
+ 
+<main>
+  <section class="py-5 text-center container">
+    <div class="row py-lg-5">
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <h1 class="fw-light">Album Hero</h1>
+        <p class="lead text-muted">Nanatsu no Taizai (bahasa Jepang: 七つの大罪), yang diterbitkan di Indonesia dengan judul Seven Deadly Sins,
+             adalah sebuah seri manga shōnen Jepang bergenre fantasi yang ditulis dan diilustrasikan oleh Nakaba Suzuki.</p>
+      </div>
+    </div>
+  </section>
+  <figure class="text-center mt-5">
+        <blockquote class="blockquote">
+          <p>“ANIME CARD , ADD CARD IF YOU WANT”</p>
+        </blockquote>
+        <figcaption class="blockquote-footer">
+          ANIME IS NEVER<cite title="Source Title">END</cite>
+        </figcaption>
+
+  <div class="album py-5 bg-light">
+    <div class="container">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        {{#each heroes}}
+        <div class="col">
+          <div class="card shadow-sm">
+            <div>
+                <img class="card-image" src="{{this.photo}}" alt="">
+            </div>
+            <div class="card-body mt-3">
+              <div class="d-flex justify-content-between align-items-center">  
+                <p>{{this.name}}</p>
+                <p>{{this.type_id}}</p>            
+              </div>
+              <div class="btn-group">
+                  <a href="/info-data/{{this.id}}" class="btn btn-primary py-2 mr-1">Details</a>
+                </div>
+            </div>
+          </div>
+        </div>
+        {{/ each}}
+      </div>
+    </div>
+  </div>
+</main>
+{{> footer}}
+

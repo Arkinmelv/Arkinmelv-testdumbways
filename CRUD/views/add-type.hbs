@@ -1,0 +1,31 @@
+{{> header}}
+{{#if message}}
+<div class="alert alert-{{message.type}}" role="alert">
+    <b>{{message.message}}</b>
+</div>
+{{/if}}
+{{> navbar}}
+    <div class="container">
+    <div class="row">
+        <div class="col-6 mt-5">
+            <img src="/public/image/5.png" alt="">
+        </div>
+        <div class="col-6 mt-5">
+            <div class="title-text mt-5">
+                <h1>ADD TYPE</h1>
+            </div>
+            <form action="/add-type" method="POST">
+                <div class="form-group input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i data-feather="users"></i> </span>
+                    </div>
+                    <input name="name" class="form-control" placeholder="TYPE HERO" type="text">
+                </div>
+                <div class="text-end">
+                    <button class="btn-submit btn btn-succes">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{{> footer}}

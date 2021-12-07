@@ -1,0 +1,65 @@
+{{> header}}
+{{> header}}
+{{#if message}}
+<div class="alert alert-{{message.type}}" role="alert">
+    <b>{{message.message}}</b>
+</div>
+{{/if}}
+{{> navbar}}
+    <div class="container">
+    <div class="row">
+        <div class="col-6 mt-5">
+            <img src="/public/image/2.png" alt="">
+        </div>
+        <div class="col-6 mt-5">
+            <div class="title-text mt-5">
+                <h1>ADD HERO</h1>
+            </div>
+            <form action="/add-data" method="POST" enctype="multipart/form-data">
+                <div class="file-input-group text-start">
+                    <input name="photo" class="form-control" type="file" id="file" onchange="handleChange()" hidden>
+                    <label  for="file">Attache Photo</label>
+                </div>
+                <div id="preview-thumbnail" class="text-start">
+
+                </div>
+                <div class="form-group input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i data-feather="users"></i> </span>
+                    </div>
+                    <input name="name" class="form-control" placeholder="HERO NAME" type="text">
+                </div>
+                {{!-- <div class="form-group input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i data-feather="hash"></i> </span>
+                    </div>
+                    <input name="type_id" type="number" class="form-control" placeholder="TYPE HERO" type="text">
+                </div> --}}
+                 <div class="form-group input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i data-feather="bookmark"></i> </span>
+                    </div>
+                    <select name="type_id" class="form-control">
+                        <option selected=""> Select Type</option>
+                        <option value="1">1. ARCHER</option>
+                        <option value="2">2. DUELIST</option>
+                        <option value="3">3. KING</option>
+                        <option value="4">4. RANGE</option>
+                    </select>
+                </div>
+                <div class="text-end">
+                    <button class="btn-submit btn btn-succes">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    function handleChange(){
+        let previewElement = document.getElementById('preview-thumbnail')
+        const value = URL.createObjectURL(event.target.files[0])
+        previewElement.innerHTML = `<img src='${value}' style="width:400px; class="rounded"" />`
+    }
+</script>
+{{> footer}}
